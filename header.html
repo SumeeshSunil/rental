@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <style>
+        .nav-bar {
+            width: auto;
+            height: 100px;
+            background: black;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+
+        .nav-bar-list {
+            display: flex;
+            gap: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        select {
+            border: none;
+            outline: none;
+            background: black;
+            color: white;
+            padding: 5px 10px;
+        }
+        option {
+            background-color: white;
+            color: black;
+        }
+        .btn {
+            padding: 20px;
+        }
+        button {
+            outline: none;
+            padding: 7px;
+            margin: 7px;
+        }
+        .btn-sign-in {
+            background: black;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        .btn-sign-up {
+            background: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <h3>Rental</h3>
+        <div class="nav-bar-list">
+            <select name="Hosting" id="">
+                <option value="">Hosting</option>
+            </select>
+            <p><a href="#">Contact US</a></p>
+            <select name="Hosting" id="">
+                <option value="">Account</option>
+            </select>
+        </div>
+        <div class="btn">
+            <button class="btn-sign-in">Sign in</button>
+            <button class="btn-sign-up">Sign Up</button>
+        </div>
+    </div>
+</body>
+</html>

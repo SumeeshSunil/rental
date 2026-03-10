@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    height: 97vh;
+    width: auto;
+    background-color: rgb(36, 33, 33);
+    border: 1px solid black;
+}
+
+.intro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+
+.sign-up {
+    flex: 1;
+    color: black;
+    background-color: white;
+    padding: 0px 100px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+h3 {
+    margin-top: 0px;
+}
+
+button {
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(180, 172, 172);
+    background: white;
+    padding: 0 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+button img {
+    padding: 18px ;
+}
+
+button img {
+    padding: 0;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+.underline {
+    background: rgb(180, 175, 175);
+    height: 1px;
+    margin: 20px;
+}
+
+.social-btn {
+    margin: 5px;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    height: 41px;
+    padding: 0 20px;
+    margin-top: 5px;
+    border: 1px solid rgb(180, 172, 172);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.terms {
+    display: flex;
+    gap: 10px;
+}
+
+.terms p {
+    margin: 0px;
+}
+
+.btn-sign-up {
+    background: rgb(19, 18, 18);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.589);
+    color: white;
+}
