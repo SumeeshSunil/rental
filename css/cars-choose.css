@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #d5d3d5;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-content {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 30px black;
+}
+
+.hero img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.filter-bars {
+    height: 70px;
+    position: relative;
+}
+
+.filter-wrapper {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 41px;
+}
+
+.filter-bar {
+    background: white;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.search-box {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0px 14px;
+    height: 36px;
+    min-width: 160px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 12px;
+    background: transparent;
+    color: #555;
+}
+
+.search-box input::placeholder {
+    color: #8b8b8b;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 23px;
+    color: #8b8b8b;
+}
+
+/* custom dropdown */
+.filter-dropdown {
+    position: relative;
+    min-width: 150px;
+}
+
+.dropdown-toggle,
+.filter-btn {
+    border: 1px solid #d9d9d9;
+    height: 36px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 14px;
+    outline: none;
+    font-size: 14px;
+    color: #666;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.dropdown-label {
+    white-space: nowrap;
+}
+
+.dropdown-arrow {
+    font-size: 16px;
+    transition: transform 0.25s ease;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+    padding: 6px;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.dropdown-item {
+    border: none;
+    background: transparent;
+    text-align: left;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f3f3f3;
+}
+
+.filter-dropdown.active .dropdown-menu {
+    display: flex;
+}
+
+.filter-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.search-box:hover,
+.dropdown-toggle:hover {
+    border-color: #bfbfbf;
+}
+
+.vehicle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-heading {
+    padding-top: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 5px black;
+}
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 270px);
+    gap: 25px;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+.vehicle-card {
+    background: white;
+    border-radius: 7px;
+    border: 1px solid rgb(224, 224, 224);
+    padding: 20px 25px 10px 25px;
+    transition: 0.25s ease;
+}
+
+.vehicle-image {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 30px;
+}
+
+.vehicle-image img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.vehicle-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin: 20px 0px 0px 0px;
+}
+
+.vehicle-name h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.vehicle-details p {
+    font-size: 10px;
+    margin: 5px 0px 7px 0px;
+}
+
+.rate-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.rent-btn button {
+    outline: none;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.543);
+    cursor: pointer;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px black;
+}

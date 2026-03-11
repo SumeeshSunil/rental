@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./cars-choose.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/cars-choose.css">
 </head>
+
 <body>
-    
+
     <header class="navbar">
         <div class="container">
             <div class="logo">Logo</div>
@@ -27,22 +31,67 @@
         <img src="./images/banner.jpg" alt="banner">
     </section>
 
-    <section class="filter-bar">
-        <div class="container">
-            <div class="filter-search">
-                <input type="text" name="" id="">
-            </div>
-            <div class="filter-price">
-                <button>Price</button>
-            </div>
-            <div class="filter-time-duration">
-                <button>Time Duration</button>
-            </div>
-            <div class="filter-brand">
-                <button>filter-brand</button>
-            </div>
-            <div class="filter-filter">
-                <button>filter-bar</button>
+    <section class="filter-bars">
+        <div class="filter-wrapper">
+            <div class="filter-bar">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search">
+                    <span class="icon">⌕</span>
+                </div>
+
+                <!-- Price Dropdown -->
+                <div class="filter-dropdown">
+                    <button class="dropdown-toggle" type="button">
+                        <span class="dropdown-label">Price</span>
+                        <span class="dropdown-arrow">⌄</span>
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" type="button">Low to High</button>
+                        <button class="dropdown-item" type="button">High to Low</button>
+                        <button class="dropdown-item" type="button">Under 2000</button>
+                        <button class="dropdown-item" type="button">Above 2000</button>
+                    </div>
+                </div>
+
+                <!-- Time Duration Dropdown -->
+                <div class="filter-dropdown">
+                    <button class="dropdown-toggle" type="button">
+                        <span class="dropdown-label">Time Duration</span>
+                        <span class="dropdown-arrow">⌄</span>
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" type="button">1 Hour</button>
+                        <button class="dropdown-item" type="button">3 Hours</button>
+                        <button class="dropdown-item" type="button">6 Hours</button>
+                        <button class="dropdown-item" type="button">1 Day</button>
+                    </div>
+                </div>
+
+                <!-- Brand Dropdown -->
+                <div class="filter-dropdown">
+                    <button class="dropdown-toggle" type="button">
+                        <span class="dropdown-label">Brand</span>
+                        <span class="dropdown-arrow">⌄</span>
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" type="button">Toyota</button>
+                        <button class="dropdown-item" type="button">Jeep</button>
+                        <button class="dropdown-item" type="button">BMW</button>
+                        <button class="dropdown-item" type="button">Mercedes</button>
+                        <button class="dropdown-item" type="button">Hyundai</button>
+                        <button class="dropdown-item" type="button">Tata</button>
+                    </div>
+                </div>
+
+                <button class="filter-btn" type="button">
+                    Filter
+                    <span>⚙</span>
+                </button>
+
             </div>
         </div>
     </section>
@@ -363,5 +412,41 @@
         </div>
     </main>
 
+    <script>
+        const dropdowns = document.querySelectorAll(".filter-dropdown");
+
+        dropdowns.forEach((dropdown) => {
+            const toggle = dropdown.querySelector(".dropdown-toggle");
+            const items = dropdown.querySelectorAll(".dropdown-item");
+            const label = dropdown.querySelector(".dropdown-label");
+
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+
+                dropdowns.forEach((otherDropdown) => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove("active");
+                    }
+                });
+
+                dropdown.classList.toggle("active");
+            });
+
+            items.forEach((item) => {
+                item.addEventListener("click", function () {
+                    label.textContent = this.textContent;
+                    dropdown.classList.remove("active");
+                });
+            });
+        });
+
+        document.addEventListener("click", function () {
+            dropdowns.forEach((dropdown) => {
+                dropdown.classList.remove("active");
+            });
+        });
+    </script>
+
 </body>
+
 </html>
