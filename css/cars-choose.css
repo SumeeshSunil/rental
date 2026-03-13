@@ -259,5 +259,5 @@ body {
 
 .vehicle-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 9px black;
 }
