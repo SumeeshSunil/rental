@@ -4,435 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars</title>
+    <title>Cars - Full Tailwind Version</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const cars = [
+            { name: "Corola", img: "corolla.png" },
+            { name: "Jeep Renegade", img: "jeep-renegade.png" },
+            { name: "Fortuner", img: "Fortuner.png" },
+            { name: "Camero", img: "Camaro.png" },
+            { name: "BMW M2", img: "BMW M2.png" },
+            { name: "Aveo", img: "Aveo.png" },
+            { name: "Tiago", img: "Tiago.png" },
+            { name: "Tuscan", img: "Tucson.png" },
+            { name: "Benz A-Class", img: "Benz a class.png" }
+        ];
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/cars-choose.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter-dropdown.active .dropdown-menu {
+            display: flex;
+        }
+
+        .filter-dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-[#d5d3d5]">
 
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">Logo</div>
+    <header class="border border-black">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <div class="font-bold text-xl">Logo</div>
             <nav class="nav-links">123</nav>
             <div class="profile">profile</div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Rent A Car Rent Your Freedom</h1>
-            <p>Find the best vehicle for your trip with easy booking and flexible options.</p>
+    <section class="relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
+            <h1 class="text-4xl font-bold drop-shadow-[0_0_30px_rgba(0,0,0,1)]">Rent A Car Rent Your Freedom</h1>
+            <p class="drop-shadow-[0_0_10px_rgba(0,0,0,1)]">Find the best vehicle for your trip with easy booking and
+                flexible options.</p>
         </div>
-        <img src="./images/banner.jpg" alt="banner">
+        <img src="./images/banner.jpg" alt="banner" class="w-full h-[200px] object-cover">
     </section>
 
-    <section class="filter-bars">
-        <div class="filter-wrapper">
-            <div class="filter-bar">
+    <section class="relative h-[70px]">
+        <div class="absolute w-full flex justify-center bottom-[41px] z-20">
+            <div
+                class="bg-white flex p-5 rounded-[10px] gap-[25px] items-center justify-center shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
 
-                <div class="search-box">
-                    <input type="text" placeholder="Search">
-                    <span class="icon">⌕</span>
+                <div
+                    class="bg-white border border-[#d9d9d9] rounded-[10px] flex items-center px-[14px] h-9 min-w-[160px] hover:border-[#bfbfbf]">
+                    <input type="text" placeholder="Search"
+                        class="border-none outline-none flex-1 text-xs bg-transparent text-[#555] placeholder:text-[#8b8b8b] placeholder:text-sm">
+                    <span class="text-[23px] text-[#8b8b8b]">⌕</span>
                 </div>
 
-                <!-- Price Dropdown -->
-                <div class="filter-dropdown">
-                    <button class="dropdown-toggle" type="button">
+                <div class="filter-dropdown relative min-w-[150px]">
+                    <button
+                        class="dropdown-toggle w-full h-9 border border-[#d9d9d9] rounded-[10px] bg-white px-[14px] text-sm text-[#666] flex items-center justify-between gap-2.5 cursor-pointer hover:border-[#bfbfbf]">
                         <span class="dropdown-label">Price</span>
-                        <span class="dropdown-arrow">⌄</span>
+                        <span class="dropdown-arrow text-base transition-transform duration-300">⌄</span>
                     </button>
-
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" type="button">Low to High</button>
-                        <button class="dropdown-item" type="button">High to Low</button>
-                        <button class="dropdown-item" type="button">Under 2000</button>
-                        <button class="dropdown-item" type="button">Above 2000</button>
+                    <div
+                        class="dropdown-menu absolute top-[calc(100%+8px)] left-0 w-full bg-white border border-[#d9d9d9] rounded-[10px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] p-1.5 hidden flex-col z-[100]">
+                        <button class="dropdown-item text-left w-full p-2.5 rounded-lg text-sm hover:bg-[#f3f3f3]">Low
+                            to High</button>
+                        <button class="dropdown-item text-left w-full p-2.5 rounded-lg text-sm hover:bg-[#f3f3f3]">High
+                            to Low</button>
                     </div>
                 </div>
 
-                <!-- Time Duration Dropdown -->
-                <div class="filter-dropdown">
-                    <button class="dropdown-toggle" type="button">
+                <div class="filter-dropdown relative min-w-[150px]">
+                    <button
+                        class="dropdown-toggle w-full h-9 border border-[#d9d9d9] rounded-[10px] bg-white px-[14px] text-sm text-[#666] flex items-center justify-between gap-2.5 cursor-pointer">
                         <span class="dropdown-label">Time Duration</span>
-                        <span class="dropdown-arrow">⌄</span>
+                        <span class="dropdown-arrow text-base transition-transform duration-300">⌄</span>
                     </button>
-
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" type="button">1 Hour</button>
-                        <button class="dropdown-item" type="button">3 Hours</button>
-                        <button class="dropdown-item" type="button">6 Hours</button>
-                        <button class="dropdown-item" type="button">1 Day</button>
+                    <div
+                        class="dropdown-menu absolute top-[calc(100%+8px)] left-0 w-full bg-white border border-[#d9d9d9] rounded-[10px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] p-1.5 hidden flex-col z-[100]">
+                        <button class="dropdown-item text-left w-full p-2.5 rounded-lg text-sm hover:bg-[#f3f3f3]">1
+                            Hour</button>
+                        <button class="dropdown-item text-left w-full p-2.5 rounded-lg text-sm hover:bg-[#f3f3f3]">1
+                            Day</button>
                     </div>
                 </div>
 
-                <!-- Brand Dropdown -->
-                <div class="filter-dropdown">
-                    <button class="dropdown-toggle" type="button">
+                <div class="filter-dropdown relative min-w-[150px]">
+                    <button
+                        class="dropdown-toggle w-full h-9 border border-[#d9d9d9] rounded-[10px] bg-white px-[14px] text-sm text-[#666] flex items-center justify-between gap-2.5 cursor-pointer">
                         <span class="dropdown-label">Brand</span>
-                        <span class="dropdown-arrow">⌄</span>
+                        <span class="dropdown-arrow text-base transition-transform duration-300">⌄</span>
                     </button>
+                    <div
+                        class="dropdown-menu absolute top-[calc(100%+8px)] left-0 w-full bg-white border border-[#d9d9d9] rounded-[10px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] p-1.5 hidden flex-col z-[100]">
 
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" type="button">Toyota</button>
-                        <button class="dropdown-item" type="button">Jeep</button>
-                        <button class="dropdown-item" type="button">BMW</button>
-                        <button class="dropdown-item" type="button">Mercedes</button>
-                        <button class="dropdown-item" type="button">Hyundai</button>
-                        <button class="dropdown-item" type="button">Tata</button>
+                        <script>
+                            document.write(cars.map(car => `<button class="dropdown-item text-left w-full p-2.5 rounded-lg text-sm hover:bg-[#f3f3f3]">${car.name}</button>`).join(''));
+                            cars.map(car => console.log(car.name));
+                        </script>
+
                     </div>
                 </div>
 
-                <button class="filter-btn" type="button">
-                    Filter
-                    <span>⚙</span>
+                <button
+                    class="flex items-center gap-2 h-9 border border-[#d9d9d9] rounded-[10px] bg-white px-[14px] text-sm text-[#666] hover:border-[#bfbfbf] cursor-pointer">
+                    Filter <span>⚙</span>
                 </button>
-
             </div>
         </div>
     </section>
 
-    <main class="vehicle-section">
-        <section class="section-heading">
-            <h2>Available Vehicles</h2>
-            <p>Chosse your ride</p>
+    <main class="flex flex-col items-center">
+        <section class="pt-5 text-white drop-shadow-[0_0_5px_black] text-center">
+            <h2 class="text-2xl font-bold">Available Vehicles</h2>
+            <p>Choose your ride</p>
         </section>
-        <div class="vehicle-grid">
 
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/corolla.png" alt="Jeep image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Corola</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
+        <div class="grid grid-cols-[repeat(4,270px)] gap-[25px] justify-center my-10 mx-auto">
 
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/jeep-renegade.png" alt="Jeep image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Jeep Renegade</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/Fortuner.png" alt="Fortuner image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Fortuner</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/Camaro.png" alt="Camaro image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Camero</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/BMW M2.png" alt="Jeep image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>BMW M2</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/Aveo.png" alt="Aveo image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Aveo</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/Tiago.png" alt="Tiago image" style="width: 750px;">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Tiago</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/Tucson.png" alt="Tuscan image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Tuscan</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="./images/cars/Benz a class.png" alt="Camaro image">
-                </div>
-                <div class="vehicle-name">
-                    <h3>Benz A-Class</h3>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-details-left">
-                        <h4>Seats: 4</h4>
-                        <p>Luggage: 4</p>
-                        <p>Doors: 4</p>
-                        <p>Fuel: Petrol</p>
-                    </div>
-                    <div class="vehicle-details-right">
-                        <h4>Horsepower: 500</h4>
-                        <p>Engine: 3000</p>
-                        <p>Drive: 4</p>
-                        <p>Type: Hatchback</p>
-                    </div>
-                </div>
-                <div class="per-hrs">
-                    <p>Per Hours</p>
-                </div>
-                <div class="rate-button">
-                    <div class="rate">
-                        <h4>5000 Rs</h4>
-                    </div>
-                    <div class="rent-btn">
-                        <button>Rent Car</button>
-                    </div>
-                </div>
-            </article>
+            <script>
+                document.write(cars.map(car => `
+                    <article class="bg-white rounded-[7px] border border-[#e0e0e0] p-[65px_25px_10px_25px] transition-all duration-300 hover:-translate-y-1.25 hover:shadow-[0_0_9px_black]">
+                        <div class="h-[70px] flex items-center justify-center p-5 mb-12">
+                            <img src="./images/cars/${car.img}" alt="${car.name}" class="max-w-full max-h-[200px] object-contain" style="${car.style || ''}">
+                        </div>
+                        <div><h3 class="text-lg font-medium">${car.name}</h3></div>
+                        <div class="flex justify-between text-[11px] mt-5">
+                            <div class="space-y-1.5">
+                                <h4 class="font-bold">Seats: 4</h4>
+                                <p class="text-[10px]">Luggage: 4</p>
+                                <p class="text-[10px]">Doors: 4</p>
+                                <p class="text-[10px]">Fuel: Petrol</p>
+                            </div>
+                            <div class="space-y-1.5">
+                                <h4 class="font-bold">Horsepower: 500</h4>
+                                <p class="text-[10px]">Engine: 3000</p>
+                                <p class="text-[10px]">Drive: 4</p>
+                                <p class="text-[10px]">Type: Hatchback</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-[10px] text-gray-600 font-medium"><p>Per Hours</p></div>
+                        <div class="flex justify-between items-center mt-2.5 mb-5">
+                            <div class="font-bold text-base"><h4>5000 Rs</h4></div>
+                            <button class="bg-black text-white p-2 rounded-md shadow-[0_4px_10px_rgba(0,0,0,0.54)] cursor-pointer">Rent Car</button>
+                        </div>
+                    </article>
+                `).join(''));
+            </script>
 
         </div>
     </main>
 
     <script>
         const dropdowns = document.querySelectorAll(".filter-dropdown");
-
         dropdowns.forEach((dropdown) => {
             const toggle = dropdown.querySelector(".dropdown-toggle");
             const items = dropdown.querySelectorAll(".dropdown-item");
             const label = dropdown.querySelector(".dropdown-label");
 
-            toggle.addEventListener("click", function (e) {
+            toggle.addEventListener("click", (e) => {
                 e.stopPropagation();
-
-                dropdowns.forEach((otherDropdown) => {
-                    if (otherDropdown !== dropdown) {
-                        otherDropdown.classList.remove("active");
-                    }
-                });
-
+                dropdowns.forEach(o => o !== dropdown && o.classList.remove("active"));
                 dropdown.classList.toggle("active");
             });
 
-            items.forEach((item) => {
+            items.forEach(item => {
                 item.addEventListener("click", function () {
                     label.textContent = this.textContent;
                     dropdown.classList.remove("active");
@@ -440,13 +186,10 @@
             });
         });
 
-        document.addEventListener("click", function () {
-            dropdowns.forEach((dropdown) => {
-                dropdown.classList.remove("active");
-            });
+        document.addEventListener("click", () => {
+            dropdowns.forEach(d => d.classList.remove("active"));
         });
     </script>
-
 </body>
 
 </html>
