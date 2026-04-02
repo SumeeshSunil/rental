@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Picks</title>
+    <style>
+        .banner {
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner .slider {
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            top: 10%;
+            left: calc(50% - 100px);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: autoRun 20s linear infinite;
+        }
+
+        @keyframes autoRun{
+            from {
+                transform: perspective(1000px) rotateY(0deg);
+            }to {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+
+        .banner .slider .item {
+            position: absolute;
+            inset: 0 0 0 0;
+            transform:
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(550px);
+        }
+
+        .banner .slider .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position:1"><img src="./images/cars/BMW M2.png" alt=""></div>
+            <div class="item" style="--position:2"><img src="./images/cars/Aveo.png" alt=""></div>
+            <div class="item" style="--position:3"><img src="./images/cars/Benz a class.png" alt=""></div>
+            <div class="item" style="--position:4"><img src="./images/cars/Camaro.png" alt=""></div>
+            <div class="item" style="--position:5"><img src="./images/cars/corolla.png" alt=""></div>
+            <div class="item" style="--position:6"><img src="./images/cars/Fortuner.png" alt=""></div>
+            <div class="item" style="--position:7"><img src="./images/cars/jeep-renegade.png" alt=""></div>
+            <div class="item" style="--position:8"><img src="./images/cars/Tiago.png" alt=""></div>
+            <div class="item" style="--position:9"><img src="./images/cars/Tucson.png" alt=""></div>
+            <div class="item" style="--position:10"><img src="./images/cars/BMW M2.png" alt=""></div>
+        </div>
+    </div>
+</body>
+
+</html>
