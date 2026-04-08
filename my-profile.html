@@ -96,47 +96,53 @@
 
             <main class="space-y-6">
 
-                <section class="bg-white border border-[#e7e7e7] rounded-lg px-6 py-7">
+                <form action="" method="POST" class="max-w-3xl mx-auto">
 
-                    <h2 class="text-[22px] font-semibold mb-7">Update Profile</h2>
+                    <section class="bg-white border border-[#e7e7e7] rounded-lg px-6 py-7">
 
-                    <!-- Row 1 -->
-                    <div class="flex gap-6 mb-5">
-                        <div class="flex flex-col w-full space-y-1">
-                            <label for="username" class="font-medium">Username</label>
-                            <input type="text" id="username"
-                                class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <h2 class="text-[22px] font-semibold mb-7">Update Profile</h2>
+
+                        <!-- Row 1 -->
+                        <div class="flex gap-6 mb-5">
+                            <div class="flex flex-col w-full space-y-1">
+                                <label for="username" class="font-medium">Username</label>
+                                <input type="text" name="username" id="username"
+                                    class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                            </div>
+
+                            <div class="flex flex-col w-full space-y-1">
+                                <label for="email" class="font-medium">Email Address</label>
+                                <input type="email" name="email" id="email"
+                                    class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                            </div>
                         </div>
 
-                        <div class="flex flex-col w-full space-y-1">
-                            <label for="email" class="font-medium">Email Address</label>
-                            <input type="email" id="email"
-                                class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        </div>
-                    </div>
+                        <!-- Password Row -->
+                        <div class="flex gap-6 mb-6">
+                            <div class="flex flex-col w-full space-y-1">
+                                <label for="password" class="font-medium">Password</label>
+                                <input type="password" name="password" id="password"
+                                    class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                            </div>
 
-                    <!-- Password Row -->
-                    <div class="flex gap-6 mb-6">
-                        <div class="flex flex-col w-full space-y-1">
-                            <label for="password" class="font-medium">Password</label>
-                            <input type="password" id="password"
-                                class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            <div class="flex flex-col w-full space-y-1">
+                                <label for="confirm_password" class="font-medium">Confirm Password</label>
+                                <input type="password" name="confirm_password" id="confirm_password"
+                                    class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                            </div>
                         </div>
 
-                        <div class="flex flex-col w-full space-y-1">
-                            <label for="confirm_password" class="font-medium">Confirm Password</label>
-                            <input type="password" id="confirm_password"
-                                class="border border-[#e6e6e6] p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <!-- Button -->
+                        <div class="text-right">
+                            <button type="submit"
+                                class="bg-gray-900 text-white px-6 py-2 rounded-md font-medium hover:bg-gray-800 transition">
+                                Update Profile
+                            </button>
                         </div>
-                    </div>
-                    <div>
-                        <button
-                            class="bg-gray-900 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-600 transition">
-                            Update Profile
-                        </button>
-                    </div>
-                </section>
 
+                    </section>
+
+                </form>
             </main>
         </div>
     </div>
