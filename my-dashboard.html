@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Order</title>
+    <title>My Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         orderDetails = ['Booking No', 'Vehicle', 'Pick Up Location', 'Date', 'Return Date',
@@ -29,9 +29,9 @@
 
     <div class="max-w-[1120px] mx-auto px-5 py-12">
 
-        <h1 class="text-[56px] font-bold text-[#4a4a4a] mb-14">My Order</h1>
+        <h1 class="text-[56px] font-bold text-[#4a4a4a] mb-14">My Dashboard</h1>
 
-        <div class="grid grid-cols-1 lg:grid-cols-[345px_1fr] gap-5 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-[345px_minmax(0,1fr)] gap-6 items-start">
 
             <aside
                 class="bg-white border border-[#e7e7e7] rounded-lg lg:min-h-[760px] p-7 flex flex-col justify-between">
@@ -47,10 +47,9 @@
                     </div>
                     <!--  -->
                     <!-- Menu -->
-                    <nav
-                        class="flex flex-row justify-between items-center w-full h-auto gap-2 lg:flex-col lg:space-y-3 lg:h-auto lg:gap-0">
+                    <nav class="flex flex-row justify-between items-center w-full h-auto gap-2 lg:flex-col lg:space-y-3 lg:h-auto lg:gap-0">
                         <a href="./my-dashboard.html"
-                            class="flex w-full items-center justify-center border border-gray-200 lg:justify-start gap-4 text-[18px] px-4 py-4 rounded-md hover:bg-gray-100 transition-all active:scale-95">
+                            class="flex w-full items-center justify-center lg:justify-start gap-4 text-[18px] text-white bg-[#0d0d11] px-4 py-4 rounded-md transition-transform active:scale-95">
                             <span class="flex items-center justify-center w-7 h-7 shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current"
                                     viewBox="0 0 24 24">
@@ -71,7 +70,7 @@
                         </a>
 
                         <a href="./order-history.html"
-                            class="flex w-full items-center justify-center border border-gray-200 rounded-lg text-white bg-[#0d0d11]  lg:justify-start gap-4 text-[18px] text-[#1f1f1f] px-4 py-4 rounded-md  transition-transform active:scale-95">
+                            class="flex w-full items-center justify-center border border-gray-200 rounded-lg lg:justify-start gap-4 text-[18px] text-[#1f1f1f] px-4 py-4 rounded-md hover:bg-gray-100 transition-all active:scale-95">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current shrink-0"
                                 viewBox="0 0 24 24">
                                 <path
@@ -104,65 +103,64 @@
                 </div>
             </aside>
 
-            <main class="space-y-6">
+            <main class="w-full space-y-6">
 
-                <section class="bg-white border border-[#e7e7e7] rounded-lg px-6 py-7">
-                    <h2 class="text-[22px] font-semibold mb-7">Booking Order</h2>
+                <section class="w-full">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[760px] border-separate border-spacing-y-0">
-                            <thead>
+                        <div
+                            class="w-full bg-white border border-gray-200 rounded-lg p-6 shadow-sm flex items-center gap-4">
+                            <div class="bg-gray-100 p-3 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M7 2v2H5a2 2 0 00-2 2v3h18V6a2 2 0 00-2-2h-2V2h-2v2H9V2H7zm14 9H3v9a2 2 0 002 2h14a2 2 0 002-2v-9z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-semibold">03</h2>
+                                <p class="text-gray-500 text-sm">Total Order</p>
+                            </div>
+                        </div>
 
+                        <div
+                            class="w-full bg-white border border-gray-200 rounded-lg p-6 shadow-sm flex items-center gap-4">
+                            <div class="bg-gray-100 p-3 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.59 13.41l-9-9A2 2 0 0010.17 4H4a2 2 0 00-2 2v6.17a2 2 0 00.59 1.42l9 9a2 2 0 002.83 0l6.17-6.17a2 2 0 000-2.83z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-semibold">12</h2>
+                                <p class="text-gray-500 text-sm">Coupons</p>
+                            </div>
+                        </div>
 
-                                <tr class="text-left text-[15px] text-[#666]">
-                                    <script>
-                                        document.write(orderDetails.map(orderDetail =>
-                                            `<th class="font-medium pb-4 text-center">${orderDetail}</th>`
-                                        ).join(''));
-                                        orderDetails.map(orderDetail => console.log(orderDetail))
-                                    </script>
-                                </tr>
-                            </thead>
-                            <tbody class="text-[15px] text-[#8a8a8a]">
-                                <tr>
-                                    <td class="py-3">
-                                        <span
-                                            class="bg-[#f2f2f2] px-4 py-1.5 rounded-full text-[#777] font-medium">#02345</span>
-                                    </td>
-                                    <td>Jeep Renegade</td>
-                                    <td>Amborkhana Point,Sylhet</td>
-                                    <td>22/1/2019</td>
-                                    <td>24/1/2019</td>
-                                    <td>$500</td>
-                                    <td>
-                                        <script>document.write(getStatus('Booking'))</script>
-                                    </td>
-                                </tr>
+                        <div
+                            class="w-full bg-white border border-gray-200 rounded-lg p-6 shadow-sm flex items-center gap-4">
+                            <div class="bg-gray-100 p-3 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2a10 10 0 100 20 10 10 0 000-20zm3.59 13.59L13.41 12l2.18-2.18-1.41-1.41L12 10.59 9.82 8.41 8.41 9.82 10.59 12l-2.18 2.18 1.41 1.41L12 13.41l2.18 2.18 1.41-1.41z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-semibold">24</h2>
+                                <p class="text-gray-500 text-sm">Cancel Order</p>
+                            </div>
+                        </div>
 
-                                <tr>
-                                    <td class="py-3">
-                                        <span
-                                            class="bg-[#f2f2f2] px-4 py-1.5 rounded-full text-[#777] font-medium">#02345</span>
-                                    </td>
-                                    <td>R15 Bike</td>
-                                    <td>Housing Estate,Sylhet</td>
-                                    <td>29/4/2019</td>
-                                    <td>6/5/2019</td>
-                                    <td>$500</td>
-                                    <td>
-                                        <script>document.write(getStatus('Booking'))</script>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </section>
 
                 <section class="bg-white border border-[#e7e7e7] rounded-lg px-6 py-7">
-                    <h2 class="text-[22px] font-semibold mb-7">Completed Order</h2>
+                    <h2 class="text-[22px] font-semibold mb-7">Order History</h2>
 
                     <div class="overflow-x-auto">
-                        <table class="w-full min-w-[760px]">
+                        <table class="w-full">
                             <thead>
                                 <tr class="text-left text-[15px] text-[#666]">
                                     <script>
@@ -238,40 +236,6 @@
                     </div>
                 </section>
 
-                <section class="bg-white border border-[#e7e7e7] rounded-lg px-6 py-7">
-                    <h2 class="text-[22px] font-semibold mb-7">Order Cancelled</h2>
-
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[760px]">
-                            <thead>
-                                <tr class="text-left text-[15px] text-[#666]">
-                                    <script>
-                                        document.write(orderDetails.map(orderDetail =>
-                                            `<th class="font-medium pb-4 text-center">${orderDetail}</th>`
-                                        ).join(''));
-                                        orderDetails.map(orderDetail => console.log(orderDetail));
-                                    </script>
-                                </tr>
-                            </thead>
-                            <tbody class="text-[15px] text-[#8a8a8a]">
-                                <tr>
-                                    <td class="py-3">
-                                        <span
-                                            class="bg-[#f2f2f2] px-4 py-1.5 rounded-full text-[#777] font-medium">#02345</span>
-                                    </td>
-                                    <td>Jeep Renegade</td>
-                                    <td>Amborkhana Point,Sylhet</td>
-                                    <td>22/1/2019</td>
-                                    <td>24/1/2019</td>
-                                    <td>$500</td>
-                                    <td>
-                                        <script>document.write(getStatus('Cancelled'))</script>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
 
             </main>
         </div>
