@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <footer class="flex justify-between bg-gray-900 text-white py-10 px-50">
-        <div>
-            <h3 class="font-bold text-[30px]">Rental</h3>
-            <p class="text-[12px] text-gray-200">Is Just A Rental Ride Away. Take Control Of Your Journey Today</p>
+    <footer class="flex flex-wrap gap-10 px-8 py-2  bg-gray-900 text-white md:justify-between lg:flex-row lg:justify-between lg:py-10 lg:px-30">
+        <div class="flex flex-col flex-wrap">
+            <h3 class="font-bold text-[30px] mb-5">Rental</h3>
+            <p class="text-[12px] text-gray-200 w-55">Is Just A Rental Ride Away. Take Control Of Your Journey Today</p>
+            <div class="mt-5 flex gap-5">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
         </div>
-        <div>
-            <h4>About Company</h4>
-            <ul class="text-[11px] list-disc">
-                <li>About Us</li>
-                <li>Careers</li>
-                <li>Help</li>
-                <li>Contact Us</li>
-                <li>Fee Policy</li>
-                <li>Privacy Policy</li>
-                <li>Terms and Conditions</li>
+        <div class="lg:flex lg:flex-col lg:items-center lg:w-50">
+            <h4 class="mb-5 mt-5">About Company</h4>
+            <ul class="text-[12px] list-disc">
+                <li class="hover:underline"><a href="#">About Us</a></li>
+                <li class="hover:underline"><a href="#">Careers</a></li>
+                <li class="hover:underline"><a href="#">Help</a></li>
+                <li class="hover:underline"><a href="#">Contact Us</a></li>
+                <li class="hover:underline"><a href="#">Fee Policy</a></li>
+                <li class="hover:underline"><a href="#">Privacy Policy</a></li>
+                <li class="hover:underline"><a href="#">Terms and Conditions</a></li>
             </ul>
         </div>
-        <div>
-            <h3>City</h3>
+        <div class="lg:flex lg:flex-col lg:items-center lg:w-50">
+            <h3 class="mb-5 mt-5">City</h3>
+            <ul class="text-[12px] list-disc">
+                <li class="hover:underline"><a href="#">Kochi</a></li>
+                <li class="hover:underline"><a href="#">Calicut</a></li>
+            </ul>
         </div>
-        <div>
-            <h3>Vehicle Types</h3>
+        <div class="lg:flex lg:flex-col lg:items-center lg:w-50">
+            <h3 class="mb-5 mt-5">Vehicle Types</h3>
+            <ul class="text-[12px] list-disc ">
+                <li class="hover:underline"><a href="#">Car</a></li>
+                <li class="hover:underline"><a href="#">Bike</a></li>
+            </ul>
         </div>
     </footer>
 </body>
+
 </html>
